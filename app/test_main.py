@@ -11,7 +11,8 @@ import pytest
         (23, 23, [1, 1]),
         (24, 24, [2, 2]),
         (27, 27, [2, 2]),
-        (28, 28, [3, 2])
+        (28, 28, [3, 2]),
+        (100, 100), [21, 17]
     ]
 )
 def test_result_value_must_be_correct(cat_age: int,
@@ -44,13 +45,10 @@ def test_validate_type_value_error(cat_age: int,
     [
         (-1, 1),
         (1, -5),
-        (-6, -6),
-        (36, 3),
-        (3, 36),
-        (40, 40)
+        (-6, -6)
     ]
 )
 def test_validate_range_value_error(cat_age: int,
                                     dog_age: int) -> None:
-    with pytest.raises(ValueError, match="Range Value Error"):
+    with pytest.raises(ValueError, match="Negative Value Error"):
         get_human_age(cat_age, dog_age)
