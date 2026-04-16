@@ -24,7 +24,7 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
     if isinstance(dog_age, int) is False:
         raise ValueError("Type Value Error")
     if cat_age < 0 or dog_age < 0:
-        raise ValueError("Range Value Error")
+        raise ValueError("Negative Value Error")
 
     cat_man_year = (cat_age >= 15) + (cat_age >= 24) + (cat_age >= 28) * \
                    (((cat_age - 28) // 4) + 1)
